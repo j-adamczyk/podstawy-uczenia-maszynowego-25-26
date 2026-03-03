@@ -1,0 +1,50 @@
+[project]
+name = "basics-of-machine-learning"
+version = "1.0.0"
+description = ""
+authors = [{name = "Jakub Adamczyk (j-adamczyk)", email = "jadamczy@agh.edu.pl"}]
+readme = "README.md"
+
+requires-python = ">=3.11,<3.13"
+
+dependencies = [
+    "fast-langdetect",
+    "feature-engine",
+    "imbalanced-learn",
+    "jupyter",
+    "matplotlib",
+    "pandas",
+    "pillow",
+    "plotly",
+    "pyarrow",
+    "pynndescent",
+    "pyod",
+    "scikit-fingerprints",
+    "scikit-learn",
+    "seaborn",
+    "sentence_transformers",
+    "torch",
+    "tqdm",
+    "xgboost",
+    "umap-learn",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "ruff"
+]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.ruff.lint]
+ignore = [
+    "E731",  # lambda expressions
+]
+exclude = ["**notebook.ipynb"]
